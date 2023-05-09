@@ -6,6 +6,7 @@ import '../decorations/decorations.dart' show InputDecorations;
 import '../models/models.dart' show Product;
 import '../providers/providers.dart' show ProductFormProvider;
 import '../services/services.dart' show ProductsService;
+import '../themes/app_themes.dart';
 import '../validators/validators.dart' show ProductFormValidator;
 import 'package:image_picker/image_picker.dart';
 
@@ -188,7 +189,7 @@ class _ProductDataForm extends StatelessWidget {
 						SwitchListTile(
 							title: const Text('Available', style: TextStyle(fontSize: 20)),
 							value: product.isAvailable,
-							activeColor: Colors.yellow,
+							activeColor: AppThemes.primaryColor,
 							onChanged: productFormProvider.setProductAvailability
 						),
 
