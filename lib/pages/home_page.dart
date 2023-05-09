@@ -22,8 +22,8 @@ class HomePage extends StatelessWidget {
 
   	return Scaffold(
 			appBar: AppBar(
-				title: const Text('Vendelo',
-					style: TextStyle(color: Colors.black87)
+				title: const Text('Products',
+					style: TextStyle(color: Colors.white)
 				)
 			),
     	body: ListView.builder(
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
 					Navigator.pushNamed(context, ProductPage.routeName);
 				},
 				child: const Icon(Icons.add,
-					color: Colors.black87,
+					color: Colors.white,
 				)
 			)
 		);

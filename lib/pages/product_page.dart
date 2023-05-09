@@ -108,7 +108,7 @@ class _ProductPageBody extends StatelessWidget {
 					}
 				} : null,
 				child: !productsService.isSaving
-					? const Icon(Icons.save, color: Colors.black87)
+					? const Icon(Icons.save, color: Colors.white)
 					: const CircularProgressIndicator(color: Colors.white)
 			)
 		);

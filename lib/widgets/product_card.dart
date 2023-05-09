@@ -97,7 +97,7 @@ class _ProductUpperTag extends StatelessWidget {
         child: Text('\$$text',
             style: const TextStyle(
                 fontSize: 18,
-                color: Colors.black87,
+                color: Colors.white,
                 fontWeight: FontWeight.bold
             ),
             maxLines: 1,
@@ -133,7 +133,7 @@ class _ProductLowerTag extends StatelessWidget {
           Text(title,
             style: const TextStyle(
               fontSize: 18,
-              color: Colors.black87,
+              color: Colors.white,
               fontWeight: FontWeight.bold
             ),
             maxLines: 1,
@@ -147,7 +147,7 @@ class _ProductLowerTag extends StatelessWidget {
                 Text(subtitle!,
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.grey[600],
+                    color: Colors.grey[400],
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis
@@ -175,7 +175,7 @@ class _NotAvailableIndicator extends StatelessWidget {
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
-          color: Colors.grey[700],
+          color: Colors.red[700],
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             bottomRight: Radius.circular(20)

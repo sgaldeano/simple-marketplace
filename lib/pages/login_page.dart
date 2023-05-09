@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../decorations/decorations.dart' show InputDecorations;
 import '../providers/providers.dart';
+import '../themes/app_themes.dart';
 import '../validators/validators.dart' show LoginFormValidator;
 import '../widgets/widgets.dart' show AuthBackground, FormContainer;
 import 'pages.dart' show HomePage;
@@ -96,7 +97,7 @@ class _LoginForm extends StatelessWidget {
 
 					MaterialButton(
 						height: 50,
-						color: Colors.deepPurple,
+						color: AppThemes.primaryColor,
 						disabledColor: Colors.grey,
 						elevation: 0,
 						shape: RoundedRectangleBorder(

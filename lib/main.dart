@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Vendelo',
+      title: 'Products',
       initialRoute: AppRouting.initialRoute,
       routes: AppRouting.routes,
       theme: AppThemes.light
