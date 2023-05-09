@@ -1,0 +1,1 @@
+export 'package:s12_products/decorations/input_decorations.dart';

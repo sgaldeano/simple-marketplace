@@ -1,0 +1,1 @@
+export 'package:s12_products/services/products_service.dart';
