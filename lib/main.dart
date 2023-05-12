@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'routing/app_routing.dart';
-import 'services/services.dart' show ProductsService;
+import 'services/services.dart' show ProductsService, AuthService;
 import 'themes/app_themes.dart';
 
 void main() => runApp(const AppState());
@@ -16,6 +16,9 @@ class AppState extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => ProductsService()
+        ),
+        ChangeNotifierProvider(
+            create: (_) => AuthService()
         )
       ],
       child: const MyApp()

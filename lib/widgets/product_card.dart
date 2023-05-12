@@ -95,13 +95,13 @@ class _ProductUpperTag extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         alignment: Alignment.center,
         child: Text('\$$text',
-            style: const TextStyle(
-                fontSize: 18,
-                color: Colors.white,
-                fontWeight: FontWeight.bold
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis
         )
       ),
     );

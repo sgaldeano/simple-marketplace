@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:s12_products/services/services.dart' show AuthService;
 import '../decorations/decorations.dart' show InputDecorations;
 import '../providers/providers.dart';
-import '../services/services.dart' show AuthService;
 import '../themes/app_themes.dart';
 import '../validators/validators.dart' show LoginFormValidator;
 import '../widgets/widgets.dart' show AuthBackground, FormContainer;
-import 'pages.dart' show HomePage, RegisterPage;
+import 'pages.dart' show HomePage, LoginPage;
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
 
-  static const String routeName = 'login_page';
+  static const String routeName = 'register_page';
 
-	const LoginPage({super.key});
+	const RegisterPage({super.key});
 
 	@override
 	Widget build(BuildContext context) {
@@ -25,10 +25,11 @@ class LoginPage extends StatelessWidget {
 								const SizedBox(
 									height: 250
 								),
+
 								FormContainer(
 									child: Column(
 										children: [
-											Text('Login', style: Theme.of(context).textTheme.headlineMedium),
+											Text('Register', style: Theme.of(context).textTheme.headlineMedium),
 
 											const SizedBox(height: 16),
 
@@ -43,17 +44,17 @@ class LoginPage extends StatelessWidget {
 								const SizedBox(height: 50),
 
 								TextButton(
-										onPressed: () => Navigator.pushReplacementNamed(context, RegisterPage.routeName),
-										style: ButtonStyle(
-												overlayColor: MaterialStateProperty.all(AppThemes.primaryColor.withOpacity(0.1)),
-												shape: MaterialStateProperty.all(const StadiumBorder())
-										),
-										child: Padding(
-											padding: const EdgeInsets.all(6.0),
-											child: Text('Create new account',
-													style: TextStyle(fontSize: 18, color: AppThemes.primaryColor.withOpacity(0.9))
-											),
-										)
+									onPressed: () => Navigator.pushReplacementNamed(context, LoginPage.routeName),
+									style: ButtonStyle(
+										overlayColor: MaterialStateProperty.all(AppThemes.primaryColor.withOpacity(0.1)),
+										shape: MaterialStateProperty.all(const StadiumBorder())
+									),
+									child: Padding(
+									  padding: const EdgeInsets.all(6.0),
+									  child: Text('Already have an account?',
+									  	style: TextStyle(fontSize: 18, color: AppThemes.primaryColor.withOpacity(0.9))
+									  ),
+									)
 								),
 
 								const SizedBox(height: 50)
@@ -69,9 +70,7 @@ class LoginPage extends StatelessWidget {
 
 class _LoginForm extends StatelessWidget {
 
-	const _LoginForm({
-		super.key,
-	});
+	const _LoginForm();
 
 	@override
 	Widget build(BuildContext context) {
@@ -125,8 +124,7 @@ class _LoginForm extends StatelessWidget {
 							if (loginFormProvider.isValidForm()) {
 								loginFormProvider.isLoading = true;
 
-								final AuthService authService = Provider.of<AuthService>(context, listen: false);
-								final String? errorMessage = await authService.loginUser(loginFormProvider.email, loginFormProvider.password);
+								final String? errorMessage = await Provider.of<AuthService>(context, listen: false).registerUser(loginFormProvider.email, loginFormProvider.password);
 
 								if (errorMessage == null) {
 									Navigator.pushReplacementNamed(context, HomePage.routeName);
@@ -140,7 +138,11 @@ class _LoginForm extends StatelessWidget {
 							padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
 							child: Text(
 								!loginFormProvider.isLoading ? 'Enter' : 'Loading...',
-								style: const TextStyle(color: Colors.white, fontSize: 16))
+								style: const TextStyle(
+									color: Colors.white,
+									fontSize: 16
+								)
+							)
 						)
 					),
 

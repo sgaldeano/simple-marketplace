@@ -7,6 +7,7 @@ class AppRouting {
 
   static final Map<String, Widget Function(BuildContext)> routes = {
     LoginPage.routeName  : (_) => const LoginPage(),
+    RegisterPage.routeName : (_) => const RegisterPage(),
     HomePage.routeName   : (_) => const HomePage(),
     ProductPage.routeName: (_) => const ProductPage()
   };
