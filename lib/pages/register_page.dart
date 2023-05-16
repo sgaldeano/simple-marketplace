@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:s12_products/services/services.dart' show AuthService;
+import 'package:s12_products/services/services.dart' show AuthService, NotificationsService;
 import '../decorations/decorations.dart' show InputDecorations;
 import '../providers/providers.dart';
 import '../themes/app_themes.dart';
@@ -130,7 +130,7 @@ class _LoginForm extends StatelessWidget {
 									Navigator.pushReplacementNamed(context, HomePage.routeName);
 								} else {
 									loginFormProvider.isLoading = false;
-									print(errorMessage);
+									NotificationsService.showSnackBar(errorMessage);
 								}
 							}
 						} : null,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../decorations/decorations.dart' show InputDecorations;
 import '../providers/providers.dart';
-import '../services/services.dart' show AuthService;
+import '../services/services.dart' show AuthService, NotificationsService;
 import '../themes/app_themes.dart';
 import '../validators/validators.dart' show LoginFormValidator;
 import '../widgets/widgets.dart' show AuthBackground, FormContainer;
@@ -132,7 +132,7 @@ class _LoginForm extends StatelessWidget {
 									Navigator.pushReplacementNamed(context, HomePage.routeName);
 								} else {
 									loginFormProvider.isLoading = false;
-									print(errorMessage);
+									NotificationsService.showSnackBar(errorMessage);
 								}
 							}
 						} : null,

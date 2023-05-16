@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'routing/app_routing.dart';
-import 'services/services.dart' show ProductsService, AuthService;
+import 'services/services.dart' show ProductsService, AuthService, NotificationsService;
 import 'themes/app_themes.dart';
 
 void main() => runApp(const AppState());
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Products',
+      scaffoldMessengerKey: NotificationsService.messengerKey,
       initialRoute: AppRouting.initialRoute,
       routes: AppRouting.routes,
       theme: AppThemes.light

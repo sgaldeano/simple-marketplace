@@ -3,13 +3,14 @@ import '../pages/pages.dart';
 
 class AppRouting {
 
-  static const String initialRoute = LoginPage.routeName;
+  static const String initialRoute = AuthArbiterPage.routeName;
 
   static final Map<String, Widget Function(BuildContext)> routes = {
-    LoginPage.routeName  : (_) => const LoginPage(),
+    AuthArbiterPage.routeName: (_) => const AuthArbiterPage(),
+    LoginPage.routeName    : (_) => const LoginPage(),
     RegisterPage.routeName : (_) => const RegisterPage(),
-    HomePage.routeName   : (_) => const HomePage(),
-    ProductPage.routeName: (_) => const ProductPage()
+    HomePage.routeName     : (_) => const HomePage(),
+    ProductPage.routeName  : (_) => const ProductPage()
   };
 
 }
