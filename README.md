@@ -1,7 +1,6 @@
 Products
 
 Flutter application that implements a complete login screen with fields validations and a products catalog. The products catalog include special features like: Loading images from the local storage, take pictures with the camera, store pictures in an images servers and interactions with a REST API.
-
 <br><br>
 
 <img src="https://user-images.githubusercontent.com/32582213/237012382-7cd3a824-7396-4f62-952e-09f5ffae83c0.png" width="300" height="683"> <img src="https://user-images.githubusercontent.com/32582213/237012401-152809b4-90ac-4e70-8920-f5ff5cfff071.png" width="300" height="683">
